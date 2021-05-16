@@ -14,7 +14,7 @@ public class Factory {
     public Arbol factorycall(int num){
         switch(num){
             case 1: return new SplayBST<>();
-            case 2: return (Arbol) new HashMap<String,String>();
+            case 2: return new Hashmap();
         }
         return null;
     }

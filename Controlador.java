@@ -41,18 +41,18 @@ public class Controlador{
         ArrayList<String> Traducido = new ArrayList<String>(); //Inicializacion
 
         //Se traduce el String
-        for (String LineaText: Text) {
-            String newSentence = "";
-            String[] SplitText = LineaText.split(" ");
-            for (String Palabra : SplitText) {
-                if (Tree.contains(Palabra)){
-                    String nuevaPalabra = (String) Tree.get(Palabra);
-                    newSentence += nuevaPalabra + " ";
-                } else {
-                    newSentence += "*"+Palabra+"* ";
+        for (String LineaText: Text) { //Por cada linea de texto
+            String newSentence = ""; //Inicia un string vacio
+            String[] SplitText = LineaText.split(" "); //Y separa esa linea de texto en una lista
+            for (String Palabra : SplitText) { //Por cada palabra en esa lista
+                if (Tree.contains(Palabra)){ //Verifica si el arbol contiene la palabra
+                    String nuevaPalabra = (String) Tree.get(Palabra); //Si si la obtiene
+                    newSentence += nuevaPalabra + " "; //Y la agrega al string inicial
+                } else { //Sino
+                    newSentence += "*"+Palabra+"* "; //Agrega la misma palabra con asteriscos
                 }
             }
-            Traducido.add(newSentence);
+            Traducido.add(newSentence); //Al ginal agrega la oracion a la lista con el texto completo
         }
 
         menu.printlista(Traducido,2); //Se imprime el nuevo mensaje traducido
