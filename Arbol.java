@@ -1,5 +1,8 @@
-public interface Arbol {
+public interface Arbol<key,value>{
 
-    static void put(String key, String value) {
-    }
+    public void put(key K, value V);
+
+    public boolean contains(key K);
+
+    public value get(key K);
 }

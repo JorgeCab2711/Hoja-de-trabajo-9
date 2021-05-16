@@ -10,38 +10,10 @@
  ******************************************************************************/
 
 
-public class SplayBST<Key extends Comparable<Key>, Value> implements Arbol{
+public class SplayBST<Key extends Comparable<Key>, Value> implements Arbol<Key,Value>{
 
     private Node root;   // root of the BST
 
-    // BST helper node data type
-    private class Node {
-        private Key key;            // key
-        private Value value;        // associated data
-        private Node left, right;   // left and right subtrees
-
-        public Node(Key key, Value value) {
-            this.key   = key;
-            this.value = value;
-        }
-    }
-
-    public boolean contains(Key key) {
-        return get(key) != null;
-    }
-
-    // return value associated with the given key
-    // if no such value, return null
-    public Value get(Key key) {
-        root = splay(root, key);
-        int cmp = key.compareTo(root.key);
-        if (cmp == 0) return root.value;
-        else          return null;
-    }
-
-    /***************************************************************************
-     *  Splay tree insertion.
-     ***************************************************************************/
     public void put(Key key, Value value) {
         // splay key to root
         if (root == null) {
@@ -75,8 +47,33 @@ public class SplayBST<Key extends Comparable<Key>, Value> implements Arbol{
         else {
             root.value = value;
         }
-
     }
+
+    // BST helper node data type
+    private class Node {
+        private Key key;            // key
+        private Value value;        // associated data
+        private Node left, right;   // left and right subtrees
+
+        public Node(Key key, Value value) {
+            this.key   = key;
+            this.value = value;
+        }
+    }
+
+    public boolean contains(Key key) {
+        return get(key) != null;
+    }
+
+    // return value associated with the given key
+    // if no such value, return null
+    public Value get(Key key) {
+        root = splay(root, key);
+        int cmp = key.compareTo(root.key);
+        if (cmp == 0) return root.value;
+        else          return null;
+    }
+
 
     /***************************************************************************
      *  Splay tree deletion.

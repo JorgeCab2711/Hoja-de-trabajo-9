@@ -26,7 +26,7 @@ public class lectura {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(file));
 
-                while ((linea = br.readLine())!= null) { Lista.add(linea.toUpperCase(Locale.ROOT)); }
+                while ((linea = br.readLine())!= null) { Lista.add(linea.toLowerCase(Locale.ROOT)); }
                 loop = false;
 
             } catch (Exception e) { System.out.println("Ha ocurrido un error al leer el archivo, intente otra vez"); }
@@ -49,7 +49,7 @@ public class lectura {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(file));
 
-                while ((linea = br.readLine())!= null) { Lista.add(linea.toLowerCase(Locale.ROOT)); }
+                while ((linea = br.readLine())!= null) { Lista.add(linea.toLowerCase(Locale.ROOT).replace(".","").replace(",","")); }
                 loop = false;
 
             } catch (Exception e) { System.out.println("Ha ocurrido un error al leer el archivo, intente otra vez"); }
