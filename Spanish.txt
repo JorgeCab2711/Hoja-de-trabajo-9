@@ -3,7 +3,7 @@ aardvark	cerdo hormiguero
 aardvark	oso hormiguero[Noun]
 aardvarks	cerdos hormigueros
 aardvarks	osos hormigueros 
-ab	prefijo que indica separacio/n
+ab	prefijo que indica separación
 aback	hacia atras
 aback	hacia atrás,take aback, desconcertar. En facha.
 aback	por sopresa, desprevenidamente, de improviso
