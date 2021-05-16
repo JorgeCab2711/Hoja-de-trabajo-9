@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class menu {
 
+    /**
+     * Imprime el menu y obtiene la implementacio por medio de un factory
+     * @return La implementacion por medio del factory
+     */
     public static Arbol displaymenu(){
         Scanner scan = new Scanner(System.in);
         Arbol Tree = null;
@@ -24,6 +28,11 @@ public class menu {
         return Tree;
     }
 
+    /**
+     * Imprime una lista dada por cada linea
+     * @param Lista El ArrayList<String> a imprimir
+     * @param Mensaje El indicador de que mensaje debe imprimir
+     */
     public static void printlista(ArrayList<String> Lista,int Mensaje){
         switch (Mensaje){
             case 1: System.out.println("====Mensaje sin Traducir:====");break;

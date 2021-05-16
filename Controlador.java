@@ -12,7 +12,6 @@
  */
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Archivo Main
@@ -25,22 +24,23 @@ public class Controlador{
      */
     public static void main(String[] args){
 
-        Arbol Tree = menu.displaymenu();
+        Arbol Tree = menu.displaymenu(); //Se obtiene el metodo a usar del menu
 
+        //Se leen los archivos iniciales
         ArrayList<String> Dict = lectura.leerdiccionario();
         ArrayList<String> Text = lectura.leertexto();
 
-        menu.printlista(Text,1);
+        menu.printlista(Text,1); //Se imprime el mensaje inicial
 
+        //Se agregan los valores al arbol
         for (String Linea: Dict) {
             String[] Splitline = Linea.split("\t");
-            //System.out.println(Splitline[0]);
             Tree.put(Splitline[0],Splitline[1]);
-            //System.out.println(Splitline[0] + "/" + Splitline[1]);
         }
 
-        ArrayList<String> Traducido = new ArrayList<String>();
+        ArrayList<String> Traducido = new ArrayList<String>(); //Inicializacion
 
+        //Se traduce el String
         for (String LineaText: Text) {
             String newSentence = "";
             String[] SplitText = LineaText.split(" ");
@@ -55,6 +55,6 @@ public class Controlador{
             Traducido.add(newSentence);
         }
 
-        menu.printlista(Traducido,2);
+        menu.printlista(Traducido,2); //Se imprime el nuevo mensaje traducido
     }
 }

@@ -34,6 +34,11 @@ public class lectura {
         return Lista;
     }
 
+    /**
+     * Lee el achivo en la ruta especificada
+     * Este codigo esta basado en hojas de trabajo pasadas
+     * @return Lista que contiene los datos del archivo
+     */
     public static ArrayList<String> leertexto() {
 
         Scanner scanner = new Scanner(System.in);
